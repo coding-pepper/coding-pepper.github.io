@@ -16,7 +16,7 @@
         <h2>defined standards</h2>
         <h3>functions</h3>        
     </center>
-    <h3 id="writef">writef(file_desc=rdi, string=rsi, var_argc=rdx, var_args=stack);</h3>
+    <h3 id="writef">writef(file_desc=rdi, string=rsi, var_argc=rdx, var_args=stack); bytes_written=rax</h3>
     formats: <br>
         - %i% int 32bit <br>
         - %si% int 16bit<br>
@@ -32,4 +32,5 @@
         - %c% character 8bit<br>
         - %f% float 32bit<br>
         - %p% pointer in hex (pointer sized)<br>
+    <h3 id="memcmp">memcmp(a=rdi, b=rsi); difference=rax </h3>
 </body>
