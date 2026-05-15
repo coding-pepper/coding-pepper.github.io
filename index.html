@@ -62,7 +62,7 @@
         &emsp; <a>%f% float 32bit</a><br>
         &emsp; <a>%p% pointer in hex (pointer sized)</a><br>
     <h3 id="memcmp" style="background-color: #00ff00;">memcmp(a=rdi, b=rsi, len_a=rdx, len_b=rcx); difference=rax</h3>
-    <h3 id="argparse" style="background-color: #ffff00;">argparse(progname=rdi, entries_start=rsi, entries_count=rdx) output_count=rax output=stack(pushed)</h3>
+    <h3 id="argparse" style="background-color: #ffff00;">argparse(progname=rdi, argc=rsi, entries_start=rdx, entries_count=rcx) output_count=rax output=stack(pushed)</h3>
     entry_t:
      <table>
       <tr>
