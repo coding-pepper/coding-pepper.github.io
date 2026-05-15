@@ -10,14 +10,19 @@
         <h1>coding-pepper</h1>
     </center>
 
+    <h3 style="background-color: #ffff00;">green means fully implemented as described by standard<br>
+    yellow means partially implemented as described by standard / work in progress<br>
+    red means not yet implemented as described by standard</h3>
+
     <center>
         <h2>currently working on: x86cputalk</h2>
         <h2>planned projects</h2>
     </center>
     
-        &emsp; - <a style="background-color: #ffffff;" href="github.com/coding-pepper/x86cputalk" target="blank">x86cputalk - a programming language written in assembly to build my projects</a></li> <br>
-        &emsp; - <a style="background-color: #ffffff;" class="link" href="github.com/coding-pepper/peppermake" target="blank">peppermake - a small make like build system written in x86cputalk</a></li><br>
-        &emsp; - <a style="background-color: #ffffff;" class="link" href="github.com/coding-pepper/kode" target="blank">kode - a text editor written in x86cputalk</a></li><br>
+        &emsp; - <a style="background-color: #ffff00;" href="github.com/coding-pepper/x86cputalk" target="blank">x86cputalk - a programming language written in assembly to build my projects</a></li> <br>
+        &emsp; - <a style="background-color: #ff0000;" href="github.com/coding-pepper/x86polink" target="blank">x86polink - a linker supporting .po (pepper object) input and output to elf object or .po</a></li> <br>
+        &emsp; - <a style="background-color: #ff0000;" class="link" href="github.com/coding-pepper/peppermake" target="blank">peppermake - a small make like build system written in x86cputalk</a></li><br>
+        &emsp; - <a style="background-color: #ff0000;" class="link" href="github.com/coding-pepper/kode" target="blank">kode - a text editor written in x86cputalk</a></li><br>
 
     <center>
         <h2>defined standards</h2>
@@ -25,9 +30,6 @@
     </center>
     <h3 style="background-color: #ffff00;">stack means that you push arguments on the stack in reverse order<br>
     so myfn(a, b, c) you push c then b then a</h3> <br>
-    <h3 style="background-color: #ffff00;">green means fully implemented as described by standard<br>
-    yellow means partially implemented as described by standard / work in progress<br>
-    red means not yet implemented as described by standard</h3>
 
     <h3 style="background-color: #ffff00;" id="writef">writef(file_desc=rdi, string=rsi, var_args=stack); bytes_written=rax</h3>
     formats: <br>
