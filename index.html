@@ -2,7 +2,21 @@
     a {
         background-color: #ff0000;
     };
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
 
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
 </style>
 
 <body>
@@ -48,4 +62,52 @@
         &emsp; <a>%f% float 32bit</a><br>
         &emsp; <a>%p% pointer in hex (pointer sized)</a><br>
     <h3 id="memcmp" style="background-color: #00ff00;">memcmp(a=rdi, b=rsi, len_a=rdx, len_b=rcx); difference=rax</h3>
+    <h3 id="argparse" style="background-color: #ffff00;">argparse(progname=rdi, entries_start=rsi, entries_count=rdx) output_count=rax output=stack(pushed)</h3>
+    entry_t:
+     <table>
+      <tr>
+        <th>type (byte)</th>
+        <th>name (qword)</th>
+        <th>help (qword)</th>
+      </tr>
+      <tr>
+        <td>standalone=0 (ex: file.txt)</td>
+        <td>ignored</td>
+        <td>pointer to null terminated string</td>
+      </tr>
+      <tr>
+        <td>flag=1 (ex: -ffreestanding)</td>
+        <td>pointer to null terminated string</td>
+        <td>pointer to null terminated string</td>
+      </tr>
+      <tr>
+        <td>value_flag=2 (ex -o log.txt)</td>
+        <td>pointer to null terminated string</td>
+        <td>pointer to null terminated string</td>
+      </tr>
+    </table> 
+<br>
+    output_t:
+     <table>
+      <tr>
+        <th>type (byte)</th>
+        <th>name (qword)</th>
+        <th>value (qword)</th>
+      </tr>
+      <tr>
+        <td>standalone=0 (ex: file.txt)</td>
+        <td>ignored</td>
+        <td>pointer to null terminated string</td>
+      </tr>
+      <tr>
+        <td>flag=1 (ex: -ffreestanding)</td>
+        <td>pointer to null terminated string</td>
+        <td>ignored</td>
+      </tr>
+      <tr>
+        <td>value_flag=2 (ex -o log.txt)</td>
+        <td>pointer to null terminated string</td>
+        <td>pointer to null terminated string</td>
+      </tr>
+    </table> 
 </body>
