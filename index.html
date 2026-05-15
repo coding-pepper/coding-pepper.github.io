@@ -33,10 +33,10 @@
         <h2>planned projects</h2>
     </center>
     
-        &emsp; - <a style="background-color: #ffff00;" href="github.com/coding-pepper/x86cputalk" target="blank">x86cputalk - a programming language written in assembly to build my projects</a></li> <br>
-        &emsp; - <a style="background-color: #ff0000;" href="github.com/coding-pepper/x86plink" target="blank">x86plink - a linker supporting inputs: elf outputs: elf raw</a></li> <br>
-        &emsp; - <a style="background-color: #ff0000;" class="link" href="github.com/coding-pepper/peppermake" target="blank">peppermake - a small make like build system written in x86cputalk</a></li><br>
-        &emsp; - <a style="background-color: #ff0000;" class="link" href="github.com/coding-pepper/kode" target="blank">kode - a text editor written in x86cputalk</a></li><br>
+        &emsp; - <a style="background-color: #ffff00;" href="https://github.com/coding-pepper/x86cputalk" target="blank">x86cputalk - a programming language written in assembly to build my projects</a></li> <br>
+        &emsp; - <a style="background-color: #ff0000;" href="https://github.com/coding-pepper/x86plink" target="blank">x86plink - a linker supporting inputs: elf outputs: elf raw</a></li> <br>
+        &emsp; - <a style="background-color: #ff0000;" class="link" href="https://github.com/coding-pepper/peppermake" target="blank">peppermake - a small make like build system written in x86cputalk</a></li><br>
+        &emsp; - <a style="background-color: #ff0000;" class="link" href="https://github.com/coding-pepper/kode" target="blank">kode - a text editor written in x86cputalk</a></li><br>
 
     <center>
         <h2>defined standards</h2>
@@ -45,21 +45,37 @@
     <h3 style="background-color: #ffff00;">stack means that you push arguments on the stack in reverse order<br>
     so myfn(a, b, c) you push c then b then a</h3> <br>
 
-    <h3 style="background-color: #ffff00;" id="writef">writef(file_desc=rdi, string=rsi, var_args=stack); bytes_written=rax</h3>
+    <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/writef.s" target="blank"><h3 style="background-color: #ffff00;" id="writef">writef(file_desc=rdi, string=rsi, var_args=stack) bytes_written=rax</h3></a>
+    description: <br>
+        &emsp; writef writes to buffer a formatted string <br>
     formats: <br>
-        &emsp; <a style="background-color: #00ff00;">%i32% int 32bit</a><br>
-        &emsp; <a>%i16% int 16bit</a><br>
-        &emsp; <a>%i8% int 8bit</a><br>
-        &emsp; <a>%i64% int 64bit</a><br>
-        &emsp; <a>%i128% int 128bit</a><br>
-        &emsp; <a>%ui32% uint 32bit</a><br>
-        &emsp; <a>%ui16% uint 16bit</a><br>
-        &emsp; <a>%ui8% uint 8bit</a><br>
-        &emsp; <a>%ui64% uint 64bit</a><br>
-        &emsp; <a>%ui128% uint 128bit</a><br>
-        &emsp; <a style="background-color: #00ff00;">%s% null-terminated string</a><br>
-        &emsp; <a>%c% character 8bit</a><br>
-        &emsp; <a>%f% float 32bit</a><br>
-        &emsp; <a>%p% pointer in hex (pointer sized)</a><br>
-    <h3 id="memcmp" style="background-color: #00ff00;">memcmp(a=rdi, b=rsi, len_a=rdx, len_b=rcx); difference=rax</h3>
+        &emsp; <a style="background-color: #00ff00;">%int% int (max 128bit)</a><br>
+        &emsp; <a style="background-color: #00ff00;">%uint% uint (max 128bit)</a><br>
+        &emsp; <a style="background-color: #00ff00;">%str% null-terminated string</a><br>
+        &emsp; <a style="background-color: #00ff00;">%char% character 8bit</a><br>
+        &emsp; <a>%float% float 32bit</a><br>
+        &emsp; <a>%ptr% pointer in hex 64bit</a><br>
+    <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/memcmp.s" target="blank"><h3 id="memcmp" style="background-color: #00ff00;">memcmp(a=rdi, b=rsi, len_a=rdx, len_b=rcx) difference=rax</h3></a>
+    description: <br>
+        &emsp; memcmp compares two buffers limited by respective lenghts <br>
+        &emsp; result will be 1 if lenghts are different <br>
+        &emsp; result will be more than 0 if contents aren't the same<br>
+    <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/open.s" target="blank"><h3 id="open" style="background-color: #00ff00;">open(filename=rdi, flags=rsi, mode=rdx) file_desc=rax</h3></a>
+    description: <br>
+        &emsp; returns file descriptor of requested file or -1<br>
+        &emsp; this is just a syscall wrapper im not explaining this<br>
+    <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/open.s" target="blank"><h3 id="fopen_r" style="background-color: #00ff00;">fopen_r(filename=rdi) file_desc=rax</h3></a>
+    description: <br>
+        &emsp; returns file descriptor of requested file for reading alone or -1<br>
+    <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/open.s" target="blank"><h3 id="fopen_w" style="background-color: #00ff00;">fopen_w(filename=rdi, mode=rdx) file_desc=rax</h3></a>
+    description: <br>
+        &emsp; returns file descriptor of target file for writing alone or -1<br>
+        &emsp; if the target file doesn't exist it creates it <br>
+        &emsp; if the target file exists it gets recreated <br>
+    <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/open.s" target="blank"><h3 id="close" style="background-color: #00ff00;">close(file_desc=rdi)</h3></a>
+    description: <br>
+        &emsp; closes file handle or something, idk its a linux syscall<br>
+    <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/exit.s" target="blank"><h3 id="exit" style="background-color: #00ff00;">exit(exit_code=rdi)</h3></a>
+    description: <br>
+        &emsp; exits the program with given exit_code<br>
 </body>
