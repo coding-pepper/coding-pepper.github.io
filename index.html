@@ -1,3 +1,10 @@
+<style>
+    a {
+        background-color: #ff0000;
+    };
+
+</style>
+
 <body>
     <center>
         <h1>coding-pepper</h1>
@@ -8,29 +15,35 @@
         <h2>planned projects</h2>
     </center>
     
-        - <a href="github.com/coding-pepper/x86cputalk" target="blank">x86cputalk - a programming language written in assembly to build my projects</a></li> <br>
-        - <a href="github.com/coding-pepper/peppermake" target="blank">peppermake - a small make like build system written in x86cputalk</a></li><br>
-        - <a href="github.com/coding-pepper/kode" target="blank">kode - a text editor written in x86cputalk</a></li><br>
+        &emsp; - <a style="background-color: #ffffff;" href="github.com/coding-pepper/x86cputalk" target="blank">x86cputalk - a programming language written in assembly to build my projects</a></li> <br>
+        &emsp; - <a style="background-color: #ffffff;" class="link" href="github.com/coding-pepper/peppermake" target="blank">peppermake - a small make like build system written in x86cputalk</a></li><br>
+        &emsp; - <a style="background-color: #ffffff;" class="link" href="github.com/coding-pepper/kode" target="blank">kode - a text editor written in x86cputalk</a></li><br>
 
     <center>
         <h2>defined standards</h2>
         <h3>functions</h3>        
     </center>
-    <h3 id="writef">writef(file_desc=rdi, string=rsi, var_args=stack); bytes_written=rax</h3>
+    <h3 style="background-color: #ffff00;">stack means that you push arguments on the stack in reverse order<br>
+    so myfn(a, b, c) you push c then b then a</h3> <br>
+    <h3 style="background-color: #ffff00;">green means fully implemented as described by standard<br>
+    yellow means partially implemented as described by standard / work in progress<br>
+    red means not yet implemented as described by standard</h3>
+
+    <h3 style="background-color: #ffff00;" id="writef">writef(file_desc=rdi, string=rsi, var_args=stack); bytes_written=rax</h3>
     formats: <br>
-        - %i32% int 32bit <br>
-        - %i16% int 16bit<br>
-        - %i8% int 8bit<br>
-        - %i64% int 64bit<br>
-        - %i128% int 128bit<br>
-        - %ui32% uint 32bit<br>
-        - %ui16% uint 16bit<br>
-        - %ui8% uint 8bit<br>
-        - %ui64% uint 64bit<br>
-        - %ui128% uint 128bit<br>
-        - %s% null-terminated string<br>
-        - %c% character 8bit<br>
-        - %f% float 32bit<br>
-        - %p% pointer in hex (pointer sized)<br>
-    <h3 id="memcmp">memcmp(a=rdi, b=rsi, len_a=rdx, len_b=rcx); difference=rax</h3>
+        &emsp; <a style="background-color: #ffff00;">%i32% int 32bit</a><br>
+        &emsp; <a>%i16% int 16bit</a><br>
+        &emsp; <a>%i8% int 8bit</a><br>
+        &emsp; <a>%i64% int 64bit</a><br>
+        &emsp; <a>%i128% int 128bit</a><br>
+        &emsp; <a>%ui32% uint 32bit</a><br>
+        &emsp; <a>%ui16% uint 16bit</a><br>
+        &emsp; <a>%ui8% uint 8bit</a><br>
+        &emsp; <a>%ui64% uint 64bit</a><br>
+        &emsp; <a>%ui128% uint 128bit</a><br>
+        &emsp; <a style="background-color: #00ff00;">%s% null-terminated string</a><br>
+        &emsp; <a>%c% character 8bit</a><br>
+        &emsp; <a>%f% float 32bit</a><br>
+        &emsp; <a>%p% pointer in hex (pointer sized)</a><br>
+    <h3 id="memcmp" style="background-color: #00ff00;">memcmp(a=rdi, b=rsi, len_a=rdx, len_b=rcx); difference=rax</h3>
 </body>
