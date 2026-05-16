@@ -78,4 +78,13 @@
     <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/exit.s" target="blank"><h3 id="exit" style="background-color: #00ff00;">exit(exit_code=rdi)</h3></a>
     description: <br>
         &emsp; exits the program with given exit_code<br>
+    <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/fread.s" target="blank"><h3 id="fread" style="background-color: #ffff00;">fread(file_desc=rdi) pointer_to_file=rax</h3></a>
+    description: <br>
+        &emsp; allocates a null-terminated buffer using brk and reads the entire file.<br>
+    <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/brk.s" target="blank"><h3 id="brk" style="background-color: #00ff00;">brk(address=rdi) (address == 0 ? address_of_brk : status)=rax</h3></a>
+    description: <br>
+        &emsp; linux syscall wrapper<br>
+    <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/brk.s" target="blank"><h3 id="get_brk" style="background-color: #00ff00;">get_brk() address_of_brk=rax</h3></a>
+    description: <br>
+        &emsp; get address of brk<br>
 </body>
