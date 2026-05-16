@@ -54,7 +54,7 @@
         &emsp; <a style="background-color: #00ff00;">%str% null-terminated string</a><br>
         &emsp; <a style="background-color: #00ff00;">%char% character 8bit</a><br>
         &emsp; <a>%float% float 32bit</a><br>
-        &emsp; <a>%ptr% pointer in hex 64bit</a><br>
+        &emsp; <a style="background-color: #00ff00;">%ptr% pointer in hex 64bit</a><br>
     <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/memcmp.s" target="blank"><h3 id="memcmp" style="background-color: #00ff00;">memcmp(a=rdi, b=rsi, len_a=rdx, len_b=rcx) difference=rax</h3></a>
     description: <br>
         &emsp; memcmp compares two buffers limited by respective lenghts <br>
@@ -87,4 +87,10 @@
     <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/brk.s" target="blank"><h3 id="get_brk" style="background-color: #00ff00;">get_brk() address_of_brk=rax</h3></a>
     description: <br>
         &emsp; get address of brk<br>
+    <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/malloc.s" target="blank"><h3 id="init_malloc" style="background-color: #00ff00;">init_malloc(max_entries=rdi) status=rax</h3></a>
+    description: <br>
+        &emsp; initialise malloc, realloc and free<br>
+    <a href="https://github.com/coding-pepper/x86cputalk/blob/main/src/malloc.s" target="blank"><h3 id="malloc" style="background-color: #ffff00;">malloc(size=rdi) address=rax</h3></a>
+    description: <br>
+        &emsp; allocates memory duh<br>
 </body>
